@@ -2,12 +2,12 @@ import React, { useReducer } from "react";
 import "./report.css";
 import Navbar from "../../common/navbar/index";
 import Footer from "../../common/footer/index";
-import { usePostRequest } from "../../request/api";
+// import { usePostRequest } from "../../request/api";
 import { db } from "../../../firebase";
 import { collection, addDoc } from "firebase/firestore";
 
 const Index = () => {
-  const { data, postRequest, loading } = usePostRequest();
+  // const { data, postRequest, loading } = usePostRequest();
 
   const reducer = (state, event) => {
     return {
@@ -97,7 +97,7 @@ const Index = () => {
               </div>
 
               <button
-                disabled={loading}
+                // disabled={loading}
                 className="form-btn"
                 onClick={handleSubmit}
               >

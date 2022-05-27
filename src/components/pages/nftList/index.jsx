@@ -3,15 +3,15 @@ import "./list.css";
 
 import Footer from "../../common/footer/index";
 import NavBar from "../../common/navbar/index";
-import { useGetRequest, usePostRequest } from "../../request/api";
+// import { useGetRequest, usePostRequest } from "../../request/api";
 import { db, storage } from "../../../firebase";
 import { collection, addDoc } from "firebase/firestore";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { v4 as uuidv4 } from "uuid";
 
 const Index = () => {
-  const { getRequest, data } = useGetRequest();
-  const { postRequest } = usePostRequest();
+  // const { getRequest, data } = useGetRequest();
+  // const { postRequest } = usePostRequest();
 
   const [file, setFile] = useState(null);
   const [formData, setFormData] = useState();
@@ -39,6 +39,9 @@ const Index = () => {
             case "running":
               console.log("Upload is running");
               break;
+
+            default:
+              return;
           }
         },
         (error) => {
@@ -87,7 +90,7 @@ const Index = () => {
   //   }
   // };
 
-  console.log(uuidv4())
+  console.log(uuidv4());
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -246,10 +249,10 @@ const Index = () => {
               >
                 <option>---please select an option---</option>
                 <option value="Near">Near</option>
-                {data &&
+                {/* {data &&
                   data.map((item) => {
                     return <option key={item.id}>{item.name}</option>;
-                  })}
+                  })} */}
               </select>
             </div>
 

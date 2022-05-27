@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import addIcon from "../../../../assets/arrow.png";
 // import minusIcon from "../../../assets/minus.png";
-import { IoMdArrowDropdown } from "react-icons/io";
+// import { IoMdArrowDropdown } from "react-icons/io";
 
 import "./accordion.css";
 
