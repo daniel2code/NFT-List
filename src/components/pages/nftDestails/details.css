@@ -1,0 +1,21 @@
+.detailsBox {
+  padding: 50px 5%;
+}
+
+.d-card {
+  border: 1px solid #353945;
+  border-radius: 7px;
+}
+
+.tag-box {
+  background-color: #5c5c5c;
+  padding: 7px 22px;
+  border-radius: 10px;
+}
+
+.tag-box2 {
+  background-color: #5c5c5c;
+  padding: 7px 22px;
+  border-radius: 10px;
+  width: 150px;
+}

@@ -1,0 +1,15 @@
+.footer-box{
+    margin-top: 100px;
+    padding: 30px 5%;
+    background-color: #141416;
+}
+
+.footer-title{
+    
+}
+
+.footer-list li{
+    margin-top: 7px;
+    font-weight: 500;
+    cursor: pointer;
+}

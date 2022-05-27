@@ -1,0 +1,39 @@
+.faqContainer {
+  width: 100%;
+  padding: 0px 5%;
+  box-sizing: border-box;
+  margin-top: 100px;
+}
+
+.faq-item{
+  width: 49%;
+}
+
+.faqContainer div {
+  /* width: 85%; */
+}
+
+.faq-title {
+  font-size: 35px;
+}
+
+.accordionContainer {
+  margin-top: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  /* grid-gap: px; */
+}
+
+@media screen and (max-width: 750px) {
+  .accordionContainer{
+    flex-direction: column;
+  }
+
+  .faq-item{
+    width: 100%;
+  }
+  
+}

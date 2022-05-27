@@ -1,0 +1,28 @@
+.hero-container {
+  padding: 30px 5%;
+  height: 75vh;
+}
+
+.banner {
+  height: 140px;
+  border-radius: 15px;
+  /* background: linear-gradient(
+    93.51deg,
+    rgb(102, 57, 228) 0%,
+    rgb(108, 45, 191) 45.52%,
+    rgb(114, 32, 153) 100%
+  ); */
+  background-color: #353945;
+  margin-top: 50px;
+}
+
+.hero-btn {
+  border: 1px solid  #353945;;
+  border-radius: 20px;
+  padding: 8px 30px;
+  transition: all 0.5s;
+}
+
+.hero-btn:hover{
+  background-color: #353945;
+}

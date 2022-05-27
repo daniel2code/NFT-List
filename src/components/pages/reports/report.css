@@ -1,0 +1,112 @@
+.report-box {
+  display: flex;
+  width: 100%;
+  /* padding: 20px; */
+  /* min-height: 100vh; */
+}
+
+.report-one {
+  width: 40%;
+  height: auto;
+  padding: 30px;
+  background-image: url("../../assets/snft.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: auto;
+}
+
+.report-two {
+  width: 60%;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container {
+  width: 80%;
+}
+
+.page-title {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.form-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.input-box {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.input-box2 {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.label {
+  font-size: 17px;
+  color: white;
+  font-weight: 500;
+}
+
+.input {
+  width: 100%;
+  height: 45px;
+  border: 1px solid white;
+  background-color: transparent;
+  margin-top: 7px;
+  border-radius: 10px;
+  color: white;
+  padding-left: 10px;
+}
+
+.textarea {
+  width: 100%;
+  border: 1px solid white;
+  background-color: transparent;
+  margin-top: 7px;
+  border-radius: 10px;
+  color: white;
+  padding-left: 10px;
+}
+
+.form-btn {
+  color: #000;
+  background-color: white;
+  padding: 15px 55px;
+  border-radius: 10px;
+  border: 1px solid black;
+  margin-top: 25px;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 750px) {
+  .report-one {
+    display: none;
+  }
+
+  .report-two {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .report-two {
+    padding: 0px;
+    padding-top: 30px;
+  }
+
+  .form-container {
+    width: 90%;
+  }
+
+  .input-box {
+    width: 100%;
+  }
+}

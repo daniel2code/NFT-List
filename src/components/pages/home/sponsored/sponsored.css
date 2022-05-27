@@ -1,0 +1,13 @@
+.sponsor-box{
+    padding: 20px 5%;
+}
+
+@media screen and (max-width: 670px){
+    .sponsor-box{
+        padding: 20px 8%;
+    }
+}
+
+.d-footer{
+    background-color: #000;
+}
