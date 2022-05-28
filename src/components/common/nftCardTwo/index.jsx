@@ -4,17 +4,17 @@ import "./cardTwo.css";
 import nftImg from "../../assets/snft.webp";
 
 import { BsGlobe } from "react-icons/bs";
-import { BiCoin } from "react-icons/bi";
+import { BiCoin, BiCoinStack } from "react-icons/bi";
 import { IoLogoTwitter } from "react-icons/io";
-import { FaEthereum } from "react-icons/fa";
+// import { FaEthereum } from "react-icons/fa";
 
-const Index = () => {
+const Index = ({ data }) => {
   return (
     <div className="card-Two-box flex px-4 py-3">
       <div className="w-2/5">
         <img
           className="w-full h-auto card-img1"
-          src={nftImg}
+          src={data?.photo || nftImg}
           alt="nft assets"
         />
 
@@ -36,19 +36,19 @@ const Index = () => {
         </div>
       </div>
       <div className="card-btn-box flex flex-col gap-x-5 mt-4">
-        <div className="dateBoxTwo flex">
+        {/* <div className="dateBoxTwo flex">
           <div className="px-2  dateTagTwo1">Start</div>
           <div className="px-2  dateTagTwo2">in 19 hours</div>
-        </div>
+        </div> */}
 
-        <h3 className="mt-3 text-base font-bold">Blvck Paris</h3>
+        <h3 className="mt-3 text-base font-bold">{data?.title}</h3>
 
         <div className="card-two-btn-one mt-5">
-          Supply: 9999
+          Supply: {data?.supply}
         </div>
         <button className="card-two-btn-two py-3 px-5 mt-1 flex items-center">
           <span className="mr-1">
-            <FaEthereum />
+            <BiCoinStack />
           </span>
           TBA
         </button>

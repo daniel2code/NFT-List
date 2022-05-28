@@ -40,7 +40,7 @@ const Index = () => {
           console.log(item);
           return (
             <Link to={`/${item?.title}`} state={{ data: item }}>
-              <Card />
+              <Card data={item} />
             </Link>
           );
         })}

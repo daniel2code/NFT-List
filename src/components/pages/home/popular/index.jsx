@@ -35,7 +35,7 @@ const Index = () => {
         {data?.map((item) => {
           return (
             <Link to={`/${item?.title}`} state={{ data: item }}>
-              <CardTwo />;
+              <CardTwo data={item} />;
             </Link>
           );
         })}
@@ -47,7 +47,7 @@ const Index = () => {
         {data?.map((item) => {
           return (
             <Link to={`/${item?.title}`} state={{ data: item }}>
-              <CardTwo />;
+              <CardTwo data={item}  />;
             </Link>
           );
         })}
@@ -59,7 +59,7 @@ const Index = () => {
         {data?.map((item) => {
           return (
             <Link to={`/${item?.title}`} state={{ data: item }}>
-              <CardTwo />;
+              <CardTwo data={item}  />;
             </Link>
           );
         })}

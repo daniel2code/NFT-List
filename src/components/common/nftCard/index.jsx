@@ -4,19 +4,19 @@ import "./card.css";
 import nftImg from "../../assets/snft.webp";
 import { Link } from "react-router-dom";
 import { BsGlobe } from "react-icons/bs";
-import { BiCoin } from "react-icons/bi";
+import { BiCoin, BiCoinStack } from "react-icons/bi";
 import { IoLogoTwitter } from "react-icons/io";
-import { FaEthereum } from "react-icons/fa";
+// import { FaEthereum } from "react-icons/fa";
 
-const Index = () => {
+const Index = ({ data }) => {
   return (
     <div className="card-one-box px-4 pt-4">
-      <img className="w-full h-auto card-img1" src={nftImg} alt="nft assets" />
+      <img className="w-full h-auto card-img1" src={data?.photo || nftImg} alt="nft assets" />
 
-      <div className="dateBox flex">
+      {/* <div className="dateBox flex">
         <div className="px-1 py-1 dateTag1">Start</div>
         <div className="px-1 py-1 dateTag2">in 19 hours</div>
-      </div>
+      </div> */}
 
       <div className="flex flex-col justify-center items-center card-body1">
         <div className="flex items-center">
@@ -35,16 +35,16 @@ const Index = () => {
         </div>
 
         <h3 className="mt-4 text-lg font-bold">
-          <Link to="/nft-details" style={{textDecoration: "none"}}>Blvck Paris</Link>
+          <Link to="/nft-details" style={{textDecoration: "none"}}>{data?.title}</Link>
         </h3>
 
         <div className="card-btn-box flex gap-x-5 mt-4">
           <button className="card-btn-one py-2 px-5 font-large">
-            Supply: 9999
+            {data?.supply}
           </button>
           <button className="card-btn-two py-2 px-5 flex items-center">
             <span className="mr-1">
-              <FaEthereum />
+              <BiCoinStack />
             </span>
             TBA
           </button>

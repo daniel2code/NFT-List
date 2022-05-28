@@ -18,8 +18,6 @@ const Index = () => {
 
   const { data } = location.state
 
-  console.log(data)
-
   return (
     <>
       <NavBar />
@@ -33,27 +31,27 @@ const Index = () => {
           <div className="card-btn-box flex flex-col gap-x-5 mt-4">
             <div className="">
               <p className=" flex items-center">
-                <MdVerifiedUser />{" "}
+               {data?.approved && <MdVerifiedUser />}{" "}
                 <span className="text-base ml-2">{!data?.approved ? 'Unverified' : 'Verified' || ''}</span>
               </p>
 
-              <p className="mt-4 text-xl">May 02, 2022 – May 09, 2022</p>
+              <p className="mt-4 text-xl">{data?.start_date}</p>
 
               <div className="flex flex-wrap gap-y-3 mt-6 gap-x-5">
-                <div className="tag-box flex justify-center items-center gap-x-2">
+                <a href={data?.twitter} target="_blank" className="tag-box flex justify-center items-center gap-x-2">
                   <IoLogoTwitter />
                   <p>Twitter</p>
-                </div>
+                </a>
 
-                <div className="tag-box flex justify-center items-center gap-x-2">
+                <a href={data?.discord} target="_blank" className="tag-box flex justify-center items-center gap-x-2">
                   <SiDiscord />
                   <p>Discord</p>
-                </div>
+                </a>
 
-                <div className="tag-box flex justify-center items-center gap-x-2">
+                <a href={data?.website} target="_blank" className="tag-box flex justify-center items-center gap-x-2">
                   <BsGlobe />
                   <p>Website</p>
-                </div>
+                </a>
 
                 <div className="tag-box flex justify-center items-center gap-x-2">
                   <CgArrowBottomRightR />
