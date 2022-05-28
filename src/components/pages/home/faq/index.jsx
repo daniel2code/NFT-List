@@ -61,7 +61,7 @@ const FAQ = () => {
         <h2 className="faq-title">FAQ.</h2>
 
         <div className="accordionContainer">
-          {[...Array(10)].map((item) => {
+          {[...Array(8)].map((item) => {
             return (
               <div className="faq-item">
                 <Accordion

@@ -16,6 +16,7 @@ const Index = () => {
   const [file, setFile] = useState(null);
   const [formData, setFormData] = useState();
   const [perc, setPerc] = useState(null);
+  const [loading, setLoading]=useState(false)
 
   useEffect(() => {
     // getRequest("/all-networks");
@@ -79,7 +80,7 @@ const Index = () => {
     [formData]
   );
 
-  console.log(formData);
+  // console.log(formData);
 
   // const handleSubmit = (e) => {
   //   e.preventDefault();
@@ -94,12 +95,15 @@ const Index = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true)
     try {
       let data = await addDoc(collection(db, "nftLists"), {
         id: uuidv4(),
         approved: false,
         ...formData,
       });
+      
+      setLoading(false)
 
       console.log(data);
       // onClose();
@@ -113,9 +117,9 @@ const Index = () => {
       <NavBar />
       <div className="list-container">
         <div className="list-box">
-          <h1 className="text-4xl">Application Form - NearNFT.io</h1>
+          <h1 className="text-4xl">Application Form - Neargenics</h1>
           <p className="mt-4">
-            We look forward to having your project on NearNFT.io!{" "}
+            We look forward to having your project on Neargenics.{" "}
           </p>
           <p className="mt-4">
             Please fill out the form below to get listed on Upcoming NFT Drops.
@@ -171,7 +175,7 @@ const Index = () => {
             <div className="list-input-box">
               <label htmlFor="" className="list-label">
                 Website
-                <span>If Available</span>
+                <span> If Available</span>
               </label>
 
               <input
@@ -190,6 +194,19 @@ const Index = () => {
               <input
                 type="text"
                 name="price"
+                // value={formData.price || ''}
+                onChange={handleChange}
+                className="list-input"
+              />
+            </div>
+
+            <div className="list-input-box">
+              <label htmlFor="" className="list-label">
+                Supply
+              </label>
+              <input
+                type="text"
+                name="supply"
                 // value={formData.price || ''}
                 onChange={handleChange}
                 className="list-input"
@@ -221,7 +238,7 @@ const Index = () => {
                 Mint Time
               </label>
               <input
-                type="date"
+                type="time"
                 name="end_date"
                 // value={formData.end_date || ''}
                 onChange={handleChange}
@@ -295,9 +312,9 @@ const Index = () => {
               type="submit"
               onClick={handleSubmit}
               className="list-form-btn"
-              disabled={perc !== null && perc < 100}
+              disabled={(perc !== null && perc < 100) || loading}
             >
-              Submit
+             {loading === true ? "Submitting" : "Submit" } 
             </button>
           </form>
         </div>

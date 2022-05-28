@@ -3,8 +3,8 @@ import "./footer.css";
 
 const Index = () => {
   return (
-    <div className="flex flex-wrap items-start gap-x-5 footer-box">
-      <div className="md:w-1/5 w-full">
+    <div className="flex flex-wrap items-start gap-x-9 footer-box">
+      {/* <div className="md:w-1/5 w-full">
         <h1 className="footer-title text-lg font-bold">Upcoming NFT List</h1>
 
         <p className="mt-4">
@@ -12,7 +12,7 @@ const Index = () => {
           growing Non-Fungible Token industry. We cover the most interesting
           events and NFT drops across marketplaces and platforms.
         </p>
-      </div>
+      </div> */}
 
       <div className="md:w-2/12 w-full mt-7 md:mt-1">
         <h2 className="footer-title text-lg font-bold">NFT DROPS</h2>
@@ -25,7 +25,7 @@ const Index = () => {
         </ul>
       </div>
 
-      <div className="md:w-2/12 w-full mt-7 md:mt-1">
+      {/* <div className="md:w-2/12 w-full mt-7 md:mt-1">
         <h2 className="footer-title text-lg font-bold">BLOCKCHAIN</h2>
 
         <ul className="mt-4 footer-list">
@@ -35,7 +35,7 @@ const Index = () => {
           <li>BNB NFT</li>
           <li>Cardano NFT</li>
         </ul>
-      </div>
+      </div> */}
 
       <div className="md:w-2/12 w-full mt-7 md:mt-1">
         <h2 className="footer-title text-lg font-bold">Community</h2>

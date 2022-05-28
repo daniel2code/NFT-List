@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 
 import { Link, useLocation } from "react-router-dom";
 import "./navbar.css";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo.jpeg";
 
 import { BiMenu } from "react-icons/bi";
 
