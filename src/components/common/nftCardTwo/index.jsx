@@ -1,7 +1,7 @@
 import React from "react";
 import "./cardTwo.css";
 
-import nftImg from "../../assets/snft.webp";
+import nftImg from "../../assets/nft2.jpeg";
 
 import { BsGlobe } from "react-icons/bs";
 import { BiCoin, BiCoinStack } from "react-icons/bi";

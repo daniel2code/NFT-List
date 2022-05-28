@@ -4,7 +4,7 @@ import "./details.css";
 import NavBar from "../../common/navbar/index";
 import Footer from "../../common/footer/index";
 import Card from "../../common/nftCard/index";
-import nftImg from "../../assets/wacky.gif";
+import nftImg from "../../assets/nft2.jpeg";
 import { IoLogoTwitter } from "react-icons/io";
 import { MdVerifiedUser } from "react-icons/md";
 import { SiDiscord } from "react-icons/si";
@@ -37,7 +37,7 @@ const Index = () => {
                 alt="nft assets"
               />
             )}
-            
+
           </div>
 
           <div className="card-btn-box flex flex-col gap-x-5 mt-4">
