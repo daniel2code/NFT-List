@@ -12,11 +12,18 @@ const Index = ({ data }) => {
   return (
     <div className="card-Two-box flex px-4 py-3">
       <div className="w-2/5">
-        <img
-          className="w-full h-auto card-img1"
-          src={data?.photo || nftImg}
-          alt="nft assets"
-        />
+        {/* Use the video tag if nft image was posted in mp4 format */}
+        {data?.photo.includes("mp4") ? (
+          <video autoPlay>
+            <source src={data?.photo} type="video/mp4" />
+          </video>
+        ) : (
+          <img
+            className="w-full h-auto card-img1"
+            src={data?.photo || nftImg}
+            alt="nft assets"
+          />
+        )}
 
         <div className="flex flex-col justify-center items-center card-body-two">
           <div className="flex items-center ml-1 md:ml-9">
@@ -43,9 +50,7 @@ const Index = ({ data }) => {
 
         <h3 className="mt-3 text-base font-bold">{data?.title}</h3>
 
-        <div className="card-two-btn-one mt-5">
-          Supply: {data?.supply}
-        </div>
+        <div className="card-two-btn-one mt-5">Supply: {data?.supply}</div>
         <button className="card-two-btn-two py-3 px-5 mt-1 flex items-center">
           <span className="mr-1">
             <BiCoinStack />

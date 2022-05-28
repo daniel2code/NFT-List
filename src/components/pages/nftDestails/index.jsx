@@ -10,13 +10,12 @@ import { MdVerifiedUser } from "react-icons/md";
 import { SiDiscord } from "react-icons/si";
 import { BsGlobe } from "react-icons/bs";
 import { CgArrowBottomRightR } from "react-icons/cg";
-import { useLocation } from "react-router-dom"
+import { useLocation } from "react-router-dom";
 
 const Index = () => {
+  const location = useLocation();
 
-  const location = useLocation()
-
-  const { data } = location.state
+  const { data } = location.state;
 
   return (
     <>
@@ -24,31 +23,58 @@ const Index = () => {
       <div className="detailsBox">
         <div className="flex-col md:w-2/3 w-full flex px-4 py-3 d-card">
           <div className="w-full">
-            <h3 className="mt-3 text-4xl font-bold">{data?.title || ''}</h3>
-            <img className="w-full h-auto mt-5" src={ data?.photo || nftImg} alt="nft assets" />
+            <h3 className="mt-3 text-4xl font-bold">{data?.title || ""}</h3>
+
+            {/* Use the video tag if nft image was posted in mp4 format */}
+            {data?.photo.includes("mp4") ? (
+              <video autoPlay>
+                <source src={data?.photo} type="video/mp4" />
+              </video>
+            ) : (
+              <img
+                className="w-full h-auto card-img1"
+                src={data?.photo || nftImg}
+                alt="nft assets"
+              />
+            )}
+            
           </div>
 
           <div className="card-btn-box flex flex-col gap-x-5 mt-4">
             <div className="">
               <p className=" flex items-center">
-               {data?.approved && <MdVerifiedUser />}{" "}
-                <span className="text-base ml-2">{!data?.approved ? 'Unverified' : 'Verified' || ''}</span>
+                {data?.approved && <MdVerifiedUser />}{" "}
+                <span className="text-base ml-2">
+                  {!data?.approved ? "Unverified" : "Verified" || ""}
+                </span>
               </p>
 
               <p className="mt-4 text-xl">{data?.start_date}</p>
 
               <div className="flex flex-wrap gap-y-3 mt-6 gap-x-5">
-                <a href={data?.twitter} target="_blank" className="tag-box flex justify-center items-center gap-x-2">
+                <a
+                  href={data?.twitter}
+                  target="_blank"
+                  className="tag-box flex justify-center items-center gap-x-2"
+                >
                   <IoLogoTwitter />
                   <p>Twitter</p>
                 </a>
 
-                <a href={data?.discord} target="_blank" className="tag-box flex justify-center items-center gap-x-2">
+                <a
+                  href={data?.discord}
+                  target="_blank"
+                  className="tag-box flex justify-center items-center gap-x-2"
+                >
                   <SiDiscord />
                   <p>Discord</p>
                 </a>
 
-                <a href={data?.website} target="_blank" className="tag-box flex justify-center items-center gap-x-2">
+                <a
+                  href={data?.website}
+                  target="_blank"
+                  className="tag-box flex justify-center items-center gap-x-2"
+                >
                   <BsGlobe />
                   <p>Website</p>
                 </a>
@@ -68,9 +94,7 @@ const Index = () => {
             </div>
 
             <div className="text-d-box mt-9 w-full">
-              <p className="leading-7">
-                {data?.description}
-              </p>
+              <p className="leading-7">{data?.description}</p>
             </div>
           </div>
         </div>

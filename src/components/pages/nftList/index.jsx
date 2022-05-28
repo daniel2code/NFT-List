@@ -4,6 +4,7 @@ import "./list.css";
 import Footer from "../../common/footer/index";
 import NavBar from "../../common/navbar/index";
 // import { useGetRequest, usePostRequest } from "../../request/api";
+import ClipLoader from "react-spinners/ClipLoader";
 import { db, storage } from "../../../firebase";
 import { collection, addDoc } from "firebase/firestore";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
@@ -16,7 +17,7 @@ const Index = () => {
   const [file, setFile] = useState(null);
   const [formData, setFormData] = useState();
   const [perc, setPerc] = useState(null);
-  const [loading, setLoading]=useState(false)
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     // getRequest("/all-networks");
@@ -95,25 +96,31 @@ const Index = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true)
+    setLoading(true);
     try {
       let data = await addDoc(collection(db, "nftLists"), {
         id: uuidv4(),
         approved: false,
         ...formData,
       });
-      
-      setLoading(false)
 
+      setLoading(false);
+      window.location.reload();
       console.log(data);
       // onClose();
     } catch (err) {
       alert(err);
+      setLoading(false)
     }
   };
 
   return (
     <>
+      {loading && (
+        <div className="loader">
+          <ClipLoader color="white" loading={loading} size={150} />
+        </div>
+      )}
       <NavBar />
       <div className="list-container">
         <div className="list-box">
@@ -314,7 +321,7 @@ const Index = () => {
               className="list-form-btn"
               disabled={(perc !== null && perc < 100) || loading}
             >
-             {loading === true ? "Submitting" : "Submit" } 
+              {loading === true ? "Submitting" : "Submit"}
             </button>
           </form>
         </div>

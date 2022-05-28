@@ -9,9 +9,22 @@ import { IoLogoTwitter } from "react-icons/io";
 // import { FaEthereum } from "react-icons/fa";
 
 const Index = ({ data }) => {
+  console.log(data?.photo.includes("mp4"));
+
   return (
     <div className="card-one-box px-4 pt-4">
-      <img className="w-full h-auto card-img1" src={data?.photo || nftImg} alt="nft assets" />
+      {/* Use the video tag if nft image was posted in mp4 format */}
+      {data?.photo.includes("mp4") ? (
+        <video autoPlay>
+          <source src={data?.photo} type="video/mp4" />
+        </video>
+      ) : (
+        <img
+          className="w-full h-auto card-img1"
+          src={data?.photo || nftImg}
+          alt="nft assets"
+        />
+      )}
 
       {/* <div className="dateBox flex">
         <div className="px-1 py-1 dateTag1">Start</div>
@@ -35,7 +48,9 @@ const Index = ({ data }) => {
         </div>
 
         <h3 className="mt-4 text-lg font-bold">
-          <Link to="/nft-details" style={{textDecoration: "none"}}>{data?.title}</Link>
+          <Link to="/nft-details" style={{ textDecoration: "none" }}>
+            {data?.title}
+          </Link>
         </h3>
 
         <div className="card-btn-box flex gap-x-5 mt-4">
