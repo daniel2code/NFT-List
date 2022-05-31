@@ -3,7 +3,6 @@ import "./list.css";
 
 import Footer from "../../common/footer/index";
 import NavBar from "../../common/navbar/index";
-// import { useGetRequest, usePostRequest } from "../../request/api";
 import ClipLoader from "react-spinners/ClipLoader";
 import { db, storage } from "../../../firebase";
 import { collection, addDoc } from "firebase/firestore";
@@ -11,8 +10,6 @@ import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { v4 as uuidv4 } from "uuid";
 
 const Index = () => {
-  // const { getRequest, data } = useGetRequest();
-  // const { postRequest } = usePostRequest();
 
   const [file, setFile] = useState(null);
   const [formData, setFormData] = useState();
@@ -20,7 +17,6 @@ const Index = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    // getRequest("/all-networks");
 
     const uploadFile = () => {
       const name = new Date().getTime() + file.name;
@@ -61,36 +57,12 @@ const Index = () => {
     file && uploadFile();
   }, [file]);
 
-  // const reducer = (state, event) => {
-  //   return {
-  //     ...state,
-  //     [event.name]: event.value,
-  //   };
-  // };
-
-  // const [state, setState] = useReducer(reducer, {});
-
   const handleChange = useCallback(
     (e) => {
       setFormData({ ...formData, [e.target.name]: e.target.value });
-      // setState({
-      //   name: e.target.name,
-      //   value: e.target.value || file
-      // });
     },
     [formData]
   );
-
-  // console.log(formData);
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   if (!state.title || !state.end_date || !state.start_date) {
-  //     console.log("empty fields");
-  //   } else {
-  //     postRequest("/create-nftart", state);
-  //   }
-  // };
 
   console.log(uuidv4());
 
@@ -145,13 +117,6 @@ const Index = () => {
                 className="list-input"
               />
             </div>
-
-            {/* <div className="list-input-box">
-              <label htmlFor="" className="list-label">
-                Email
-              </label>
-              <input type="email" className="list-input" />
-            </div> */}
 
             <div className="list-input-box">
               <label htmlFor="" className="list-label">
@@ -220,13 +185,6 @@ const Index = () => {
               />
             </div>
 
-            {/* <div className="list-input-box">
-              <label htmlFor="" className="list-label">
-                Mint Page
-              </label>
-              <input type="text" className="list-input" />
-            </div> */}
-
             <div className="list-input-box">
               <label htmlFor="" className="list-label">
                 Mint Date
@@ -253,16 +211,9 @@ const Index = () => {
               />
             </div>
 
-            {/* <div className="list-input-box">
-              <label htmlFor="" className="list-label">
-                Contract Address
-              </label>
-              <input type="text" className="list-input" />
-            </div> */}
-
             <div className="list-input-box">
               <label htmlFor="" className="list-label">
-                Market Place
+                Blockchain
               </label>
               <select
                 type="text"
@@ -273,19 +224,9 @@ const Index = () => {
               >
                 <option>---please select an option---</option>
                 <option value="Near">Near</option>
-                {/* {data &&
-                  data.map((item) => {
-                    return <option key={item.id}>{item.name}</option>;
-                  })} */}
+            
               </select>
             </div>
-
-            {/* <div className="list-input-box">
-              <label htmlFor="" className="list-label">
-                Project Details
-              </label>
-              <input type="text" className="list-input" />
-            </div> */}
 
             <div className="list-input-box">
               <label htmlFor="" className="list-label">
