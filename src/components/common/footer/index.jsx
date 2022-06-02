@@ -1,18 +1,14 @@
 import React from "react";
 import "./footer.css";
 
+import logo from "../../assets/logo.png";
+
 const Index = () => {
   return (
     <div className="flex flex-wrap items-start gap-x-9 footer-box">
-      {/* <div className="md:w-1/5 w-full">
-        <h1 className="footer-title text-lg font-bold">Upcoming NFT List</h1>
-
-        <p className="mt-4">
-          UpcomingNFTlist is the first release and event calendar for the
-          growing Non-Fungible Token industry. We cover the most interesting
-          events and NFT drops across marketplaces and platforms.
-        </p>
-      </div> */}
+      <div className="md:w-2/12 w-full">
+        <img src={logo} alt="brand logo" className="nav-logo" />
+      </div>
 
       <div className="md:w-2/12 w-full mt-7 md:mt-1">
         <h2 className="footer-title text-lg font-bold">NFT DROPS</h2>

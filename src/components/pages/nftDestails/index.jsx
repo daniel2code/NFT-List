@@ -37,7 +37,6 @@ const Index = () => {
                 alt="nft assets"
               />
             )}
-
           </div>
 
           <div className="card-btn-box flex flex-col gap-x-5 mt-4">
@@ -55,6 +54,7 @@ const Index = () => {
                 <a
                   href={data?.twitter}
                   target="_blank"
+                  rel="noreferrer"
                   className="tag-box flex justify-center items-center gap-x-2"
                 >
                   <IoLogoTwitter />
@@ -64,6 +64,7 @@ const Index = () => {
                 <a
                   href={data?.discord}
                   target="_blank"
+                  rel="noreferrer"
                   className="tag-box flex justify-center items-center gap-x-2"
                 >
                   <SiDiscord />
@@ -73,6 +74,7 @@ const Index = () => {
                 <a
                   href={data?.website}
                   target="_blank"
+                  rel="noreferrer"
                   className="tag-box flex justify-center items-center gap-x-2"
                 >
                   <BsGlobe />

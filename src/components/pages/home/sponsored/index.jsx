@@ -39,7 +39,7 @@ const Index = () => {
     <div className="w-full sponsor-box">
       <h2 className="text-3xl font-bold">Sponsored</h2>
 
-      {loading == true && (
+      {loading === true && (
         <div className="loader">
           <ClipLoader color="white" loading={loading} size={150} />
         </div>
