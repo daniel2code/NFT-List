@@ -13,17 +13,17 @@ const Index = ({ data }) => {
     <div className="card-Two-box flex px-4 py-3">
       <div className="w-2/5">
         {/* Use the video tag if nft image was posted in mp4 format */}
-        {data?.photo.includes("mp4") ? (
+        {/* {data?.photo.includes("mp4") ? (
           <video autoPlay>
             <source src={data?.photo} type="video/mp4" />
           </video>
-        ) : (
+        ) : ( */}
           <img
             className="w-full h-auto card-img1"
             src={data?.photo || nftImg}
             alt="nft assets"
           />
-        )}
+        {/* )} */}
 
         <div className="flex flex-col justify-center items-center card-body-two">
           <div className="flex items-center ml-1 md:ml-9">

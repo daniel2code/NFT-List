@@ -18,7 +18,6 @@ const Index = () => {
         const querySnapshot = await getDocs(collection(db, "nftLists"));
         querySnapshot.forEach((doc) => {
           list.push(doc.data());
-          console.log(doc.id, " => ", doc.data());
         });
 
         setData(list);
@@ -32,24 +31,21 @@ const Index = () => {
     fetchData();
   }, []);
 
-  // const filterData = data.filter((item)=> item.approved === false)
-  // console.log("=================",filterData)
+  const filterData = data.filter((item)=> item.approved === true)
 
   return (
     <div className="w-full sponsor-box">
       <h2 className="text-3xl font-bold">Sponsored</h2>
 
       {loading === true && (
-        <div className="loader">
-          <ClipLoader color="white" loading={loading} size={150} />
-        </div>
+        <ClipLoader color="white" loading={loading} size={50} />
       )}
 
       <div className="w-full flex gap-y-6 flex-wrap justify-between mt-10">
-        {data?.map((item) => {
+        {filterData?.map((item) => {
           console.log(item);
           return (
-            <Link to={`/${item?.title}`} state={{ data: item }}>
+            <Link to={`/${item?.title}`} state={{ data: item }} key={item.id}>
               <Card data={item} />
             </Link>
           );

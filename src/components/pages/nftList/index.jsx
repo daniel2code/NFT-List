@@ -5,7 +5,7 @@ import Footer from "../../common/footer/index";
 import NavBar from "../../common/navbar/index";
 import ClipLoader from "react-spinners/ClipLoader";
 import { db, storage } from "../../../firebase";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, doc, setDoc } from "firebase/firestore";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { v4 as uuidv4 } from "uuid";
 
@@ -64,14 +64,17 @@ const Index = () => {
     [formData]
   );
 
-  console.log(uuidv4());
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+
+    let docId = uuidv4()
+
+    console.log(formData)
+
     try {
-      let data = await addDoc(collection(db, "nftLists"), {
-        id: uuidv4(),
+      let data = await setDoc(doc(db, "nftLists", docId), {
+        id: docId,
         approved: false,
         ...formData,
       });
